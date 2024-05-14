@@ -1,55 +1,89 @@
 Q1:
 
-(a)
-class CashPay extends Payment{
-    public double getCharge(){
-        return 0.0;
-    }
-}
-
-class CreditCardPay extends Payment{
-    public double getCharge(){
-        return amount*0.025;
-    }
-}
-
-class CheckPay extends Payment{
-    public double getCharge(){
-        return 10.0;
-    }
-}
-
-abstract class Payment implements Transaction{ 
-    public double getTax(){ 
-        return amount*0.156;
-    } 
-
-    @Override 
-    public void give(){ 
-        amount = amount + getCharge();
-        double totalAmount = amount + getTax();
-        System.out.println(currency+" "+totalAmount+" is paid"); 
-    } 
-}
-
-
-
-(b)
-class Square implements Shape{
-    private double side;
-
-    Square(double side){
-        this.side = side;
-    }
-    public double getArea(){
-        return side*side;
-    }
-}
-
-class ShapeTest{
-    static void draw(Shape shape){
-        System.out.println("drawing over "+shape.getArea()+" area");
-    }
-}
+    (a)
+        class CashPay extends Payment{
+            public double getCharge(){
+                return 0.0;
+            }
+        }
+        
+        class CreditCardPay extends Payment{
+            public double getCharge(){
+                return amount*0.025;
+            }
+        }
+        
+        class CheckPay extends Payment{
+            public double getCharge(){
+                return 10.0;
+            }
+        }
+        
+        abstract class Payment implements Transaction{ 
+            public double getTax(){ 
+                return amount*0.156;
+            } 
+        
+            @Override 
+            public void give(){ 
+                amount = amount + getCharge();
+                double totalAmount = amount + getTax();
+                System.out.println(currency+" "+totalAmount+" is paid"); 
+            } 
+        }
 
 
+
+    (b)
+        class Square implements Shape{
+            private double side;
+        
+            Square(double side){
+                this.side = side;
+            }
+            public double getArea(){
+                return side*side;
+            }
+        }
+        
+        class ShapeTest{
+            static void draw(Shape shape){
+                System.out.println("drawing over "+shape.getArea()+" area");
+            }
+        }
+    
+
+
+
+
+
+
+Q2:
+
+
+    (a)
+            I will update this code tommorrow
+
+
+    (b)
+    
+        1.
+            If an exception is not caught or handled in Java the program will terminate.
+        
+        2.
+            b
+            d
+            e
+            f
+
+
+
+
+
+
+
+
+Q3:
+
+
+    
