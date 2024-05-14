@@ -62,7 +62,42 @@ Q2:
 
 
     (a)
-            I will update this code tommorrow
+            import java.io.BufferedReader;
+            import java.io.BufferedWriter;
+            import java.io.FileReader;
+            import java.io.FileWriter;
+            import java.io.IOException;
+            
+            class Test{
+                public static void main(String[] args) {
+                    
+                    try{
+                        BufferedReader br = new BufferedReader(new FileReader("Input.txt"));
+                        BufferedWriter bw = new BufferedWriter(new FileWriter("Output.txt"));
+            
+                        String str;
+                        int count = 0;
+                        while ((str = br.readLine()) != null) {
+                            for (int i = 0; i < str.length(); i++) {
+                                char c = str.charAt(i);
+                                if ((c >= 'a' && c <= 'z') &&str.charAt(i) != 'a' && str.charAt(i) != 'e' && str.charAt(i) != 'i' && str.charAt(i) != 'o' && str.charAt(i) != 'u' ) {
+                                    count++;
+                                }
+                            }
+                        }
+            
+                        String consonant = String.valueOf(count);
+                        bw.write(consonant);
+            
+                        br.close();
+                        bw.close();
+                    
+                    }catch(IOException ioe){
+                        System.out.println(ioe.getMessage());
+                    }
+            
+                }
+            }
 
 
     (b)
