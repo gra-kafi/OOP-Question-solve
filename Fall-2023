@@ -1,6 +1,6 @@
 Q1:
 
-(a).
+(a)
 class CashPay extends Payment{
     public double getCharge(){
         return 0.0;
@@ -34,4 +34,22 @@ abstract class Payment implements Transaction{
 
 
 
-</hr>
+(b)
+class Square implements Shape{
+    private double side;
+
+    Square(double side){
+        this.side = side;
+    }
+    public double getArea(){
+        return side*side;
+    }
+}
+
+class ShapeTest{
+    static void draw(Shape shape){
+        System.out.println("drawing over "+shape.getArea()+" area");
+    }
+}
+
+
