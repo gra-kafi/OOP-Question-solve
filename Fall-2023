@@ -1,0 +1,37 @@
+Q1:
+
+(a).
+class CashPay extends Payment{
+    public double getCharge(){
+        return 0.0;
+    }
+}
+
+class CreditCardPay extends Payment{
+    public double getCharge(){
+        return amount*0.025;
+    }
+}
+
+class CheckPay extends Payment{
+    public double getCharge(){
+        return 10.0;
+    }
+}
+
+abstract class Payment implements Transaction{ 
+    public double getTax(){ 
+        return amount*0.156;
+    } 
+
+    @Override 
+    public void give(){ 
+        amount = amount + getCharge();
+        double totalAmount = amount + getTax();
+        System.out.println(currency+" "+totalAmount+" is paid"); 
+    } 
+}
+
+
+
+</hr>
