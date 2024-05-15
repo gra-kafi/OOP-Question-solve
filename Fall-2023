@@ -122,3 +122,38 @@ Q3:
 
 
     
+
+
+
+
+
+
+
+
+
+
+Q4:
+
+
+            class Test{
+                public static void main(String[] args) {
+                    ArrayList<Address> a = new ArrayList<>();
+                    
+                    a.add(new Address("19/A","Dhanmondi","Dhaka",1209));
+                    a.add(new Address("2/A","Tejgaon","Dhaka",1215));
+                    a.add(new Address("65","Nirala","Khulna",9100));
+            
+                    a.add(1,new Address("215","Aamtola","Barishal",8200));
+            
+                    a.set(2, new Address("36","Gulshan","Dhaka",1212));
+            
+                    Collections.sort(a, new Comparator<Address>(){
+                        public int compare(Address O1 , Address O2){
+                            return Integer.compare(O1.getZip_code(),O2.getZip_code());
+                        }
+                    });
+            
+                    a.remove(2);
+            
+                }
+            }
